@@ -1,4 +1,4 @@
-package bai01;
+package baitap01;
 
 public class SinhVien {
 
