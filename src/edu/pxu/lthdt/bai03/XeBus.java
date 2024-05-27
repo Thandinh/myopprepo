@@ -1,4 +1,5 @@
 package edu.pxu.lthdt.bai03;
+import java.time.LocalDate;
 
 public class XeBus {
 	private String hangXe;
@@ -26,7 +27,9 @@ public class XeBus {
 	}
 	
 	public void setNamSX(int namSX) {
-		if(namSX <= 1885 || namSX >= 2025) {
+		LocalDate ngayHienTai = LocalDate.now();
+		int ngayHT = ngayHienTai.getYear();
+		if(namSX < 1885 || namSX >= ngayHT) {
 			System.out.println("Nhập sai dữ liệu");
 		}else {
 			this.namSX = namSX;

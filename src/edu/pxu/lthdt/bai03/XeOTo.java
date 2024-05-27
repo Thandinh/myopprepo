@@ -1,4 +1,5 @@
 package edu.pxu.lthdt.bai03;
+import java.time.LocalDate;
 
 public class XeOTo {
 	private String hangXe;
@@ -25,7 +26,9 @@ public class XeOTo {
 	}
 	
 	public void setNamSX(int namSX) {
-		if(namSX <= 1885 || namSX >= 2025) {
+		LocalDate ngayHienTai = LocalDate.now();
+		int ngayHT = ngayHienTai.getYear();
+		if(namSX < 1885 || namSX > ngayHT) {
 			System.out.println("Bạn đã nhập sai dữ liệu");
 		}else {
 			this.namSX = namSX;
@@ -42,7 +45,15 @@ public class XeOTo {
 
 	@Override
 	public String toString() {
-		return "XeOTo [hangXe=" + hangXe + ", namSX=" + namSX + ", dongCo=" + dongCo + "]";
+		if(namSX == 0 || dongCo ==0){
+            return "Xe Bus{" + "hang xe=" + hangXe + '}'; 
+        }else if(namSX == 0){
+            return "Xe Bus{" + "hang xe=" + hangXe + ", dong co=" + dongCo + '}';
+        }else if (dongCo==0){
+            return "Xe Bus{" + "hang xe=" + hangXe + ", nam san xuat=" + namSX +'}';
+        }else {
+            return "Xe Bus{" + "hang xe=" + hangXe + ", nam san xuat=" + namSX + ", dong co=" + dongCo + '}';
+        }
 	}
 	
 	
