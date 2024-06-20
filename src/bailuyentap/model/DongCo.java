@@ -5,6 +5,7 @@ public class DongCo implements Cloneable{
 	private double congSuat;
 	
 	
+	
 	public DongCo(String loaiDongCo, double congSuat) {
 		super();
 		this.setLoaiDongCo(loaiDongCo);
@@ -28,16 +29,15 @@ public class DongCo implements Cloneable{
 	}
 
 	@Override
+	public String toString() {
+		return "DongCo [loaiDongCo=" + loaiDongCo + ", congSuat=" + congSuat + "]";
+	}
+
+	@Override
 	protected Object clone() throws CloneNotSupportedException {
 		// TODO Auto-generated method stub
 		return super.clone();
 	}
-
-	@Override
-	public String toString() {
-		return "DongCo [loaiDongCo=" + loaiDongCo + ", congSuat=" + congSuat + "]";
-	}
-	
 	
 	
 }

@@ -1,31 +1,21 @@
 package bailuyentap.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class XeHoi extends SanPham{
 	private DongCo dongCo;
-	private ArrayList<BanhXe> dsbx;
+	private List<BanhXe> dsbx;
 	
-	public XeHoi(int maSanPham, String tenSanPham, int soLuong, double giaCa,
-			DongCo dongCo, ArrayList<BanhXe> dsbx) throws CloneNotSupportedException {
+	public XeHoi(int maSanPham, String tenSanPham, int soLuong, double giaCa, DongCo dongCo) {
 		super(maSanPham, tenSanPham, soLuong, giaCa);
-		this.setDongCo((DongCo)dongCo.clone());
-		this.setDsbx(dsbx);
-	}
-	
-	public XeHoi(int maSanPham, String tenSanPham, int soLuong, double giaCa,
-			DongCo dongCo) throws CloneNotSupportedException {
-		super(maSanPham, tenSanPham, soLuong, giaCa);
-		this.setDongCo((DongCo)dongCo.clone());
+		this.setDongCo(dongCo);
 		this.dsbx = new ArrayList<BanhXe>();
 	}
 	
 	public void addBanhXe(BanhXe bx) throws CloneNotSupportedException {
-		BanhXe tam = (BanhXe)bx.clone();
-		this.dsbx.add(tam);
+		this.dsbx.add((BanhXe)bx.clone());
 	}
-	
-	
 
 	public DongCo getDongCo() {
 		return dongCo;
@@ -35,26 +25,28 @@ public class XeHoi extends SanPham{
 		this.dongCo = dongCo;
 	}
 
-	public ArrayList<BanhXe> getDsbx() {
+	public List<BanhXe> getDsbx() {
 		return dsbx;
 	}
 
-	public void setDsbx(ArrayList<BanhXe> dsbx) {
-		this.dsbx = dsbx;
+	public void setDsbx(List<BanhXe> dsbx) throws CloneNotSupportedException {
+		for(BanhXe item: dsbx) {
+			this.dsbx.add((BanhXe)item.clone());
+		}
 	}
 
 	@Override
 	public String toString() {
 		return "XeHoi [dongCo=" + dongCo + ", dsbx=" + dsbx + ", getMaSanPham()=" + getMaSanPham()
 				+ ", getTenSanPham()=" + getTenSanPham() + ", getSoLuong()=" + getSoLuong() + ", getGiaCa()="
-				+ getGiaCa() + ", toString()=" + super.toString() + "]";
+				+ getGiaCa() + "]";
 	}
-
 	
 	
 	
 	
 	
 	
-
+	
+	
 }

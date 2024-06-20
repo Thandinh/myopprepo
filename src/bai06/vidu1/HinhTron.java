@@ -38,11 +38,14 @@ public class HinhTron implements HinhHoc{
 		return 2 * Math.PI * this.banKinh;
 	}
 
+
+
 	@Override
-	public double 
-() {
+	public double tinhDienTich() {
 		// TODO Auto-generated method stub
 		return Math.PI * this.banKinh * this.banKinh;
 	}
+
+	
 
 }

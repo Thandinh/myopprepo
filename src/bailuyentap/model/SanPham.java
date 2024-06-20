@@ -6,6 +6,7 @@ public class SanPham implements Cloneable{
 	private int soLuong;
 	private double giaCa;
 	
+	
 	public SanPham(int maSanPham, String tenSanPham, int soLuong, double giaCa) {
 		super();
 		this.setMaSanPham(maSanPham);
@@ -13,35 +14,34 @@ public class SanPham implements Cloneable{
 		this.setSoLuong(soLuong);
 		this.setGiaCa(giaCa);
 	}
-
+	
 	public int getMaSanPham() {
 		return maSanPham;
 	}
-
 	public void setMaSanPham(int maSanPham) {
 		this.maSanPham = maSanPham;
 	}
-
+	
 	public String getTenSanPham() {
 		return tenSanPham;
 	}
-
+	
 	public void setTenSanPham(String tenSanPham) {
 		this.tenSanPham = tenSanPham;
 	}
-
+	
 	public int getSoLuong() {
 		return soLuong;
 	}
-
+	
 	public void setSoLuong(int soLuong) {
 		this.soLuong = soLuong;
 	}
-
+	
 	public double getGiaCa() {
 		return giaCa;
 	}
-
+	
 	public void setGiaCa(double giaCa) {
 		this.giaCa = giaCa;
 	}
@@ -57,7 +57,6 @@ public class SanPham implements Cloneable{
 		// TODO Auto-generated method stub
 		return super.clone();
 	}
-	
 	
 	
 }
